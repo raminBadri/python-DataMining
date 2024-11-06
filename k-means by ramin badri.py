@@ -18,8 +18,8 @@ stopwords = nltk.corpus.stopwords.words('english')
 stemmer = PorterStemmer()
 document_names = []
 
-
-def tokenize_and_stem_and_removestopwords(input_text):  # Tokenize, Stem and remove stopwords
+# Tokenize, Stem and remove stopwords
+def tokenize_and_stem_and_removestopwords(input_text):  
     tokens = [word for sent in nltk.sent_tokenize(input_text) for word in nltk.word_tokenize(sent)]
     filtered_stopwords = [w for w in tokens if w not in stopwords]
     filtered_tokens = []
@@ -30,7 +30,7 @@ def tokenize_and_stem_and_removestopwords(input_text):  # Tokenize, Stem and rem
     return stems
 
 
-# K-means
+# K-means clustering
 def k_means(tfidfvector, numofclusters):
     cluster_id = []
     doc_id_per_cluster = []
